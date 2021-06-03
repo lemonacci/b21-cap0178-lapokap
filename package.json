@@ -1,0 +1,20 @@
+{
+  "name": "b21-cap0178-lapokap",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lemonacci/b21-cap0178-lapokap.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lemonacci/b21-cap0178-lapokap/issues"
+  },
+  "homepage": "https://github.com/lemonacci/b21-cap0178-lapokap#readme"
+}
