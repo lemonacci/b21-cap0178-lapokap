@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/lemonacci/b21-cap0178-lapokap/issues"
   },
-  "homepage": "https://github.com/lemonacci/b21-cap0178-lapokap#readme"
+  "homepage": "https://github.com/lemonacci/b21-cap0178-lapokap#readme",
+  "dependencies": {
+    "@hapi/hapi": "^20.1.3"
+  }
 }
