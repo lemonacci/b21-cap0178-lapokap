@@ -1,8 +1,10 @@
+const { inputChatHandler } = require("./handler");
+
 const routes = [
     {
         method: 'GET',
         path: '/',
-        handler: () => {},
+        handler: inputChatHandler => {},
     },
 ];
 
