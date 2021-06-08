@@ -4,3 +4,10 @@ buat deploy ke cloudnya, bawa file :
 3. label_enconder.pickle, tokenizer.pickle (ini file pendukung modelnya)
 
 #cmiiw yaw
+
+yang dipake
+python == 3.8.5
+numpy == 1.19.2
+nltk == 3.6.2
+scikit-learn == 0.23.2
+TensorFlow == 2.4.1
