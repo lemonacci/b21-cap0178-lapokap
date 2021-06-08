@@ -1,11 +1,11 @@
 {"intents": [
         {"tag": "greeting",
          "patterns": ["Hi there","Hey","Hola", "Hello", "Good day", "helo", "halo"],
-         "responses": ["Halo, ada yang bisa dibantu?"],
+         "responses": ["Halo, kami dari LAPOKAP chatbot. Ada yang bisa dibantu?"],
          "context": [""]
         },
         {"tag" : "laporan",
-         "patterns": ["Kekerasan, penculikan, terlantar", "pornografi", "culik", "penelantaran", "menelantarkan", "pemukulan", "pukul", "kejahatan", "pelecehan", "dilecehkan"],
+         "patterns": ["lapor", "laporan", "Kekerasan", "penculikan", "terlantar", "pornografi", "culik", "penelantaran", "menelantarkan", "pemukulan", "pukul", "kejahatan", "pelecehan", "dilecehkan"],
          "responses": ["Baik kak, bisa dibantu detailnya bagaimana?"],
          "context": [""]
         },
@@ -15,12 +15,12 @@
         "context": [""]
         },
         {"tag": "bantuan",
-        "patterns": ["aku butuh", "aku ingin", "aku perlu"],
+        "patterns": ["butuh", "ingin", "perlu"],
         "responses": ["baik kak, ada lagi yang bisa kamu bantu?"],
         "context": [""]
         },
         {"tag": "penutup",
-        "patterns": ["terimakasih", "tidak ada", "Sudah cukup "],
+        "patterns": ["terimakasih", "tidak ada", "Sudah cukup"],
         "responses": ["baik kak, akan kami proses laporan kakak. Terimakasih sudah melapor"],
         "context": [""]
         }
