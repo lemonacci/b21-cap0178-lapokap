@@ -1,0 +1,6 @@
+buat deploy ke cloudnya, bawa file : 
+1. chat_model.h5 (ini modelnya)
+2. intents.json (ini bisa dibilang datanya)
+3. label_enconder.pickle, tokenizer.pickle (ini file pendukung modelnya)
+
+#cmiiw yaw
