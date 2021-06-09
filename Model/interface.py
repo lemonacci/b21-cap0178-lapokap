@@ -14,7 +14,7 @@ with open("intents.json") as file:
     data = json.load(file)
 
 
-def chat():
+def chat(inputText):
     # load trained model
     model = keras.models.load_model('chat_model.h5')
 
@@ -46,4 +46,4 @@ def chat():
         # print(Fore.GREEN + "ChatBot:" + Style.RESET_ALL,random.choice(responses))
 
 print(Fore.YELLOW + "Start messaging with the bot (type quit to stop)!" + Style.RESET_ALL)
-chat()
+#chat()

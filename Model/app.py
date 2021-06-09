@@ -6,16 +6,16 @@ import json
 from interface import chat
 
 app = Flask(__name__)
-modelfile = 'Model/tokenizer.pickle'
-model = p.load(open(modelfile, 'rb'))
 
-@app.route('/api/', methods=['POST'])
-def chat():
-    data = request.get_json()
-    prediction = model.predict(np.array(data))
-    output = prediction[0]
-
-    return jsonify(output)
+@app.route('/api/', methods=['GET','POST'])
+def chatBot():
+    if request.method == 'POST':
+        chatInput = (request.form.get('chatInput'))
+        print(chatInput)
+    chatBotReply = chat(chatInput)
+    return jsonify(chatBotReply)
 
 if __name__ == '__main__':
-    app.run(debug=True, host='localhost', port='5000')
+    app.run(debug=True, host='0.0.0.0', port='5000')
+    modelfile = 'tokenizer.pickle'
+    model = p.load(open(modelfile, 'rb'))
