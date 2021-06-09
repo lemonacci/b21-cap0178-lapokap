@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[7]:
+# In[79]:
 
 
 import json 
@@ -14,8 +14,11 @@ from tensorflow.keras.preprocessing.text import Tokenizer
 from tensorflow.keras.preprocessing.sequence import pad_sequences
 from sklearn.preprocessing import LabelEncoder
 
-
-# In[8]:
+import pickle
+import nltk
+import random
+from nltk.stem import WordNetLemmatizer
+lemmatizer = WordNetLemmatizer()
 
 
 with open('intents.json') as file:
@@ -39,15 +42,12 @@ for intent in data['intents']:
 num_classes = len(labels)
 
 
-# In[9]:
-
-
 lbl_encoder = LabelEncoder()
 lbl_encoder.fit(training_labels)
 training_labels = lbl_encoder.transform(training_labels)
 
 
-# In[10]:
+# In[84]:
 
 
 vocab_size = 1000
@@ -62,7 +62,7 @@ sequences = tokenizer.texts_to_sequences(training_sentences)
 padded_sequences = pad_sequences(sequences, truncating='post', maxlen=max_len)
 
 
-# In[11]:
+# In[85]:
 
 
 model = Sequential()
@@ -78,21 +78,42 @@ model.compile(loss='sparse_categorical_crossentropy',
 model.summary()
 
 
-# In[12]:
+# In[89]:
 
 
 epochs = 500
 history = model.fit(padded_sequences, np.array(training_labels), epochs=epochs)
 
 
-# In[13]:
+# In[90]:
+
+
+import matplotlib.pyplot as plt
+
+epochs = range(len(history.history['accuracy']))
+
+#------------------------------------------------
+# Plot training and validation accuracy per epoch
+#------------------------------------------------
+plt.plot  ( epochs, history.history['accuracy'] )
+# plt.plot  ( epochs, history.history['val_accuracy'])
+plt.title ('Training accuracy')
+plt.figure()
+
+#------------------------------------------------
+# Plot training and validation loss per epoch
+#------------------------------------------------
+plt.plot  ( epochs,history.history['loss'])
+# plt.plot  ( epochs,history.history['val_loss'])
+plt.title ('Training loss')
+
+
+# In[91]:
 
 
 
 # to save the trained model
 model.save("chat_model.h5", history)
-
-import pickle
 
 # to save the fitted tokenizer
 with open('tokenizer.pickle', 'wb') as handle:
@@ -101,7 +122,7 @@ with open('tokenizer.pickle', 'wb') as handle:
 # to save the fitted label encoder
 with open('label_encoder.pickle', 'wb') as ecn_file:
     pickle.dump(lbl_encoder, ecn_file, protocol=pickle.HIGHEST_PROTOCOL)
-
+    
 print("model created")
 
 
